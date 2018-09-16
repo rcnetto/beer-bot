@@ -8,7 +8,12 @@
 import scrapy
 
 
-class BooksItem(scrapy.Item):
+class HomeBrewItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
+    id = scrapy.Field()
+    nome = scrapy.Field()
+    categoria = scrapy.Field()
+    preco = scrapy.Field()
+    imagem_url = scrapy.Field()
+    last_updated = scrapy.Field(serializer=str)
     pass
