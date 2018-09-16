@@ -8,4 +8,5 @@
 
 class HomebrewPipeline(object):
     def process_item(self, item, spider):
+        # deve ignorar itens que não tem preço, por exemplo.
         return item

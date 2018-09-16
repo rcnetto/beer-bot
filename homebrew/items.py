@@ -14,6 +14,6 @@ class HomeBrewItem(scrapy.Item):
     nome = scrapy.Field()
     categoria = scrapy.Field()
     preco = scrapy.Field()
-    imagem_url = scrapy.Field()
+    url = scrapy.Field()
     last_updated = scrapy.Field(serializer=str)
     pass
