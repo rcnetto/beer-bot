@@ -7,6 +7,16 @@ class LamasSpider(scrapy.Spider):
     name = "lamasbrewshop.com.br"
     allowed_domains = ["loja.lamasbrewshop.com.br"]
     initial_url = 'http://loja.lamasbrewshop.com.br'
+    headers={"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Connection": "keep-alive",
+        "Upgrade-Insecure-Requests": "1",
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36"
+    }
+
+    def make_requests_from_url(self, url):
+        return scrapy.http.Request(url, headers=self.headers)
 
     def start_requests(self):
         logging.info("Initial URL: %s", self.initial_url)
